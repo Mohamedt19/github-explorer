@@ -1,0 +1,448 @@
+/* =========================
+   Simple Junior CSS
+   (clean + readable + not over-designed)
+========================= */
+
+:root {
+  --bg: #f3f4f6;
+  --panel: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+
+  --btn: #111827;
+  --btnText: #ffffff;
+
+  --error: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Layout */
+.app {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 0 16px 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Panels */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+  margin-top: 12px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.control {
+  display: grid;
+  gap: 6px;
+}
+
+.grow {
+  flex: 1;
+  min-width: 260px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Inputs */
+.input,
+.select {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: white;
+  color: var(--text);
+}
+
+.input:focus,
+.select:focus {
+  border-color: #cbd5e1;
+}
+
+.count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Buttons */
+.btn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--btn);
+  color: var(--btnText);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  opacity: 0.92;
+}
+
+/* Messages */
+.note {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.error {
+  margin-top: 12px;
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Empty state */
+.empty {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  color: var(--muted);
+  background: #fafafa;
+}
+
+.emptyTitle {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.emptyText {
+  font-size: 13px;
+}
+
+/* Lists & cards */
+.list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+/* User card */
+.cardRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.userName {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.userLogin {
+  color: var(--muted);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.userBio {
+  margin-top: 4px;
+  color: #374151;
+}
+
+.userStats {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.linkBtn {
+  margin-left: auto;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  background: white;
+}
+
+.linkBtn:hover {
+  background: #f9fafb;
+}
+
+/* Repo cards */
+.repoCard {
+  transition: transform 0.15s ease;
+}
+
+.repoCard:hover {
+  transform: translateY(-2px);
+}
+
+.repoTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.repoName {
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.repoName:hover {
+  text-decoration: underline;
+}
+
+.star {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.repoDesc {
+  margin-top: 6px;
+  color: #374151;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.repoMeta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Language pill */
+.repoLang {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #f9fafb;
+}
+
+.langDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.repoFull {
+  opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* =========================
+   Skeleton loading (simple)
+========================= */
+
+.skeletonCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.sk {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.skTitle {
+  height: 16px;
+  width: 45%;
+}
+
+.skStar {
+  height: 14px;
+  width: 70px;
+}
+
+.skLine {
+  height: 12px;
+  width: 85%;
+  margin-top: 10px;
+}
+
+.skLine.short {
+  width: 65%;
+  margin-top: 8px;
+}
+
+.skeletonMeta {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skPill {
+  height: 22px;
+  width: 90px;
+  border-radius: 999px;
+}
+
+.skPill.wide {
+  width: 160px;
+}
+
+.skeletonCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: translateX(-60%);
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+/* =========================
+   Small portfolio polish (still junior)
+========================= */
+
+/* Better spacing on mobile */
+@media (max-width: 520px) {
+  .cardRow {
+    align-items: flex-start;
+  }
+  .linkBtn {
+    margin-left: 0;
+  }
+}
+
+/* Make cards feel clickable but not fancy */
+.card,
+.panel {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.panel:hover {
+  transform: translateY(-1px);
+}
+
+/* Better focus states (accessibility) */
+.input:focus,
+.select:focus,
+.btn:focus,
+.linkBtn:focus,
+.repoName:focus {
+  outline: 2px solid #cbd5e1;
+  outline-offset: 2px;
+}
+
+/* User stats as small pills (clean) */
+.userStats span {
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Repo full name truncation (prevents ugly wrap) */
+.repoFull {
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Better button hover */
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+/* Better link button hover */
+.linkBtn:hover {
+  background: #f3f4f6;
+}
+
+/* Make repo name not jump lines */
+.repoName {
+  max-width: 520px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
