@@ -2,6 +2,11 @@
 
 A simple React + TypeScript app that lets you search GitHub users, browse their repositories, filter repos, sort, and load more.
 
+## 🌐 Live Demo
+
+Try it here:
+https://github-explorer-seven-woad.vercel.app/
+
 ## 📸 Preview
 
 ![Preview](./public/preview.png)
